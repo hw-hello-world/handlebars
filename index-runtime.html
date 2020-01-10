@@ -1,0 +1,27 @@
+<html>
+
+    <body>
+        <div id="output"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.0/handlebars.js"
+                integrity="sha256-MyRdFe4zG6Cje9/HvWBrkN2fBUaUozB0ZoUEEdIW1Hs="
+                crossorigin="anonymous"></script>
+
+        <script>
+         var template = Handlebars.compile(`
+             <h1>{{lang}}</h1>
+             <a href="https://doc.rust-lang.org/stable/book/">Rust Book</a>
+         `);
+
+         /*
+            search Function.apply(this, params) in handlebars source code
+            where it violates CSP. and `params[5]` has exact same as `main.precompiled.js`
+
+         */
+         document.getElementById('output').innerHTML = template({
+             lang: 'Rust'
+         })
+        </script>
+
+    </body>
+</html>

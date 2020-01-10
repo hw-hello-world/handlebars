@@ -1,0 +1,19 @@
+<html>
+
+    <body>
+        <div id="output"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.0/handlebars.runtime.js"
+                integrity="sha256-yo8vwdo3vFfXmzU0NfRdKDltbVcdAu/p2bUTADhdtJo="
+                crossorigin="anonymous"> </script>
+
+        <script src="main.precompiled.js"></script>
+        <script>
+         var template = Handlebars.templates['main.hbs'];
+         document.getElementById('output').innerHTML = template({
+             lang: 'Rust'
+         })
+        </script>
+
+    </body>
+</html>
