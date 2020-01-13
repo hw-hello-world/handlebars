@@ -9,10 +9,18 @@
 
         <script src="main.precompiled.js"></script>
         <script>
-         var template = Handlebars.templates['main.hbs'];
+         const template = Handlebars.templates['main.hbs'];
          document.getElementById('output').innerHTML = template({
              lang: 'Rust'
          })
+            
+            const a1 = Handlebars.template({
+             "compiler": [8, ">= 4.3.0"],
+             "main": function (container, depth0, helpers, partials, data) {
+                 return "Hello World!";
+             },
+             "useData": true
+            });
         </script>
 
     </body>
